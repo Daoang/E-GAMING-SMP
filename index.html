@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Gaming SMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#home" class="logo">E-GAMING<span>SMP</span></a>
+        
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#purchase">Store</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#vote">Vote</a></li>
+            <li><a href="#discord" class="nav-btn">Discord</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-slideshow">
+            <div class="slide active" style="background-image: url('mcwallpaper.jpg');"></div>
+            <div class="slide" style="background-image: url('mcwallpaper1.jpg');"></div>
+            <div class="slide" style="background-image: url('wallpapermc.jpeg');"></div>
+        </div>
+
+        <div class="hero-content fade-in">
+            <h1>Welcome to the E-GAMING SMP</h1>
+            <p>Join the adventure today.</p>
+            
+            <div class="ip-container" onclick="openDiscord()">
+                <span id="server-ip">E-GAMING SMP Discord</span>
+                <i class="fab fa-discord"></i>
+                <div class="tooltip">Click to Join Discord</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="about" class="section fade-in">
+            <h2>About Us</h2>
+            <p>Welcome to our unique survival experience. We strive to provide a lag-free, balanced, and community-driven server for all players.</p>
+        </section>
+
+        <section id="notes" class="section fade-in">
+            <h2>Updates & Notes</h2>
+            <div class="note-card">
+                <h3>Latest Patch</h3>
+                <p>New economy balance and updated crates are now live!</p>
+            </div>
+        </section>
+    </div>
+
+    <section id="purchase" class="section container fade-in">
+        <h2>Server Ranks</h2>
+        <div class="pricing-grid">
+            
+            <div class="card rank-card">
+                <div class="rank-header">
+                    <h3>Donator</h3>
+                    <div class="price">₱20.00</div>
+                </div>
+                <ul class="perks-list">
+                    <li><i class="fas fa-check"></i> /craft</li>
+                    <li><i class="fas fa-check"></i> +1 Row E-Chest</li>
+                </ul>
+                <button class="btn-buy" onclick="openPayment('Donator', '20.00')">Purchase</button>
+            </div>
+
+            <div class="card rank-card popular">
+                <div class="rank-header">
+                    <h3>VIP</h3>
+                    <div class="price">₱50.00</div>
+                </div>
+                <ul class="perks-list">
+                    <li><i class="fas fa-check"></i> /stonecutter</li>
+                    <li><i class="fas fa-check"></i> /craft</li>
+                    <li><i class="fas fa-check"></i> /echest</li>
+                </ul>
+                <button class="btn-buy" onclick="openPayment('VIP', '50.00')">Purchase</button>
+            </div>
+
+            <div class="card rank-card premium">
+                <div class="rank-header">
+                    <h3>VIP+</h3>
+                    <div class="price">₱100.00</div>
+                </div>
+                <ul class="perks-list">
+                    <li><i class="fas fa-check"></i> /fly</li>
+                    <li><i class="fas fa-check"></i> /iname</li>
+                    <li><i class="fas fa-check"></i> +3 Rows E-Chest</li>
+                    <li><i class="fas fa-check"></i> /echest</li>
+                    <li><i class="fas fa-check"></i> /anvil</li>
+                    <li><i class="fas fa-check"></i> /craft</li>
+                    <li><i class="fas fa-check"></i> /stonecutter</li>
+                </ul>
+                <button class="btn-buy" onclick="openPayment('VIP+', '100.00')">Purchase</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="rules" class="section container fade-in">
+        <h2>Server Rules</h2>
+        <div class="rules-container">
+            <ol class="rules-list">
+                <li>No hacking, cheating, or exploiting bugs.</li>
+                <li>Respect all staff and players.</li>
+                <li>No griefing in claimed lands.</li>
+                <li>Keep chat clean and appropriate.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="vote" class="section container fade-in">
+        <h2>Vote for Us</h2>
+        <div class="vote-grid">
+            <a href="#" class="vote-link">Planet Minecraft</a>
+            <a href="#" class="vote-link">Minecraft MP</a>
+            <a href="#" class="vote-link">TopG</a>
+            <a href="#" class="vote-link">MinecraftServer.org</a>
+            <a href="#" class="vote-link">Minecraft Server List</a>
+            <a href="#" class="vote-link">Top Minecraft Servers</a>
+        </div>
+    </section>
+
+    <section id="discord" class="discord-banner fade-in">
+        <div class="discord-content">
+            <i class="fab fa-discord"></i>
+            <h2>Join our Community</h2>
+            <p>Get support, chat with friends, and see announcements.</p>
+            <a href="#" class="btn-discord" onclick="openDiscord()">Join Discord</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 E-GAMING SMP. All Rights Reserved.</p>
+    </footer>
+
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePayment()">&times;</span>
+            
+            <div id="payment-body">
+                <h2>GCash Payment</h2>
+                <p>You are purchasing: <span id="selected-rank" style="color: var(--primary);">Rank</span></p>
+                
+                <div class="qr-container">
+                    <img src="qr.png" alt="GCash QR Code" class="qr-image">
+                    <p class="scan-text">Scan to Pay: <strong id="price-tag">₱0.00</strong></p>
+                </div>
+
+                <form id="billing-form" class="billing-form" action="https://formsubmit.co/johnreydaoang1@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="submitForm(event)">
+                    
+                    <input type="hidden" name="Rank_Bought" id="hidden-rank">
+                    <input type="hidden" name="Price_Paid" id="hidden-price">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-group">
+                        <label>Minecraft Username (IGN)</label>
+                        <input type="text" name="ign" placeholder="Enter your username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>GCash Reference No.</label>
+                        <input type="text" name="reference_no" placeholder="Ref No. (e.g. 10023...)" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Upload Screenshot (Proof)</label>
+                        <input type="file" name="screenshot" accept="image/*" class="file-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Discord Username (Optional)</label>
+                        <input type="text" name="discord_user" placeholder="User#1234">
+                    </div>
+                    
+                    <button type="submit" class="btn-buy" id="submit-btn">Submit Payment</button>
+                </form>
+            </div>
+
+            <div id="success-message" style="display: none;">
+                <i class="fas fa-check-circle" style="font-size: 4rem; color: #00cec9; margin-bottom: 20px;"></i>
+                <h2>Thank You for Purchasing!</h2>
+                <p>We have received your payment details.</p>
+                <p>Please wait for the update in <strong>Discord</strong> regarding your rank verification.</p>
+                <button class="btn-buy" onclick="closePayment()" style="margin-top: 20px;">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
