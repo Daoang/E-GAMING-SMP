@@ -31,7 +31,7 @@ const hiddenPrice = document.getElementById('hidden-price');
 function openPayment(rankName, price) {
     modal.style.display = "flex";
     
-    // Reset Modal (Show Form, Hide Success)
+    // Reset Modal
     paymentBody.style.display = "block";
     successMsg.style.display = "none";
     
@@ -54,21 +54,28 @@ window.onclick = function(event) {
     }
 }
 
-// --- NEW: Handle Form Submission with AJAX ---
+// --- Handle Form Submission (Email) ---
 function submitForm(event) {
-    event.preventDefault(); // Stop the page from redirecting
+    event.preventDefault(); // Stop page refresh
     
     const form = document.getElementById('billing-form');
     const submitBtn = document.getElementById('submit-btn');
+    const fileInput = document.getElementById('file-upload');
     const originalBtnText = submitBtn.innerText;
 
+    // --- CRITICAL CHECK: Did they pick a file? ---
+    if (fileInput.files.length === 0) {
+        alert("⚠️ Please upload your GCash Screenshot Proof!");
+        return; // STOP HERE. Do not send email.
+    }
+
     // Change button text to show it's working
-    submitBtn.innerText = "Sending...";
+    submitBtn.innerText = "Uploading Proof...";
     submitBtn.disabled = true;
 
     const formData = new FormData(form);
 
-    // Send data to FormSubmit in the background
+    // Send data to FormSubmit
     fetch(form.action, {
         method: 'POST',
         body: formData
@@ -78,7 +85,7 @@ function submitForm(event) {
         paymentBody.style.display = "none";
         successMsg.style.display = "block";
         
-        // Reset form for next time
+        // Reset form
         form.reset();
         submitBtn.innerText = originalBtnText;
         submitBtn.disabled = false;
