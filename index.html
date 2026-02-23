@@ -66,43 +66,53 @@
             <div class="card rank-card">
                 <div class="rank-header">
                     <h3>Donator</h3>
-                    <div class="price">₱20.00</div>
+                    <div class="price">₱100.00</div>
                 </div>
                 <ul class="perks-list">
+                    <li><i class="fas fa-check"></i> 2 homes</li>
                     <li><i class="fas fa-check"></i> /craft</li>
-                    <li><i class="fas fa-check"></i> +1 Row E-Chest</li>
+                    <li><i class="fas fa-check"></i> /trash</li>
+                    <li><i class="fas fa-check"></i> /bp(18 slots)</li>
                 </ul>
-                <button class="btn-buy" onclick="openPayment('Donator', '20.00')">Purchase</button>
+                <button class="btn-buy" onclick="openPayment('Donator', '100.00')">Purchase</button>
             </div>
 
             <div class="card rank-card popular">
                 <div class="rank-header">
                     <h3>VIP</h3>
-                    <div class="price">₱50.00</div>
+                    <div class="price">₱300.00</div>
                 </div>
                 <ul class="perks-list">
-                    <li><i class="fas fa-check"></i> /stonecutter</li>
+                    <li><i class="fas fa-check"></i> 4 homes</li>
                     <li><i class="fas fa-check"></i> /craft</li>
                     <li><i class="fas fa-check"></i> /echest</li>
+                    <li><i class="fas fa-check"></i> /kittycannon</li>
+                    <li><i class="fas fa-check"></i> /stonecutter</li>
+                    <li><i class="fas fa-check"></i> /hat</li>
+                    <li><i class="fas fa-check"></i> /bp(36 slots)</li>
                 </ul>
-                <button class="btn-buy" onclick="openPayment('VIP', '50.00')">Purchase</button>
+                <button class="btn-buy" onclick="openPayment('VIP', '300.00')">Purchase</button>
             </div>
 
             <div class="card rank-card premium">
                 <div class="rank-header">
                     <h3>VIP+</h3>
-                    <div class="price">₱100.00</div>
+                    <div class="price">₱500.00</div>
                 </div>
                 <ul class="perks-list">
-                    <li><i class="fas fa-check"></i> /fly</li>
-                    <li><i class="fas fa-check"></i> /iname</li>
-                    <li><i class="fas fa-check"></i> +3 Rows E-Chest</li>
+                    <li><i class="fas fa-check"></i> 8 homes</li>
+                    <li><i class="fas fa-check"></i> /craft</li>
                     <li><i class="fas fa-check"></i> /echest</li>
                     <li><i class="fas fa-check"></i> /anvil</li>
-                    <li><i class="fas fa-check"></i> /craft</li>
+                    <li><i class="fas fa-check"></i> /fly</li>
+                    <li><i class="fas fa-check"></i> /kittycannon</li>
+                    <li><i class="fas fa-check"></i> /hat</li>
                     <li><i class="fas fa-check"></i> /stonecutter</li>
+                    <li><i class="fas fa-check"></i> /beecannon</li>
+                    <li><i class="fas fa-check"></i> /iname</li>
+                    <li><i class="fas fa-check"></i> /bp(54 slots)</li>
                 </ul>
-                <button class="btn-buy" onclick="openPayment('VIP+', '100.00')">Purchase</button>
+                <button class="btn-buy" onclick="openPayment('VIP+', '500.00')">Purchase</button>
             </div>
 
         </div>
@@ -123,21 +133,18 @@
     <section id="vote" class="section container fade-in">
         <h2>Vote for Us</h2>
         <div class="vote-grid">
-            <a href="#" class="vote-link">Planet Minecraft</a>
-            <a href="#" class="vote-link">Minecraft MP</a>
-            <a href="#" class="vote-link">TopG</a>
-            <a href="#" class="vote-link">MinecraftServer.org</a>
-            <a href="#" class="vote-link">Minecraft Server List</a>
-            <a href="#" class="vote-link">Top Minecraft Servers</a>
+            <a href="https://topminecraftservers.org/vote/42812" class="vote-link" target="_blank">Top Minecraft Servers</a>
+            <a href="https://topg.org/minecraft-servers/server-679734#vote" class="vote-link" target="_blank">TopG</a>
+            <a href="https://minecraft-mp.com/server/354647/vote/" class="vote-link" target="_blank">minecraft-mp</a>
+            <a href="https://best-minecraft-servers.co/server-e-gaming-smp.32380/vote" class="vote-link" target="_blank">best-minecraft-servers</a>
         </div>
     </section>
-
     <section id="discord" class="discord-banner fade-in">
         <div class="discord-content">
             <i class="fab fa-discord"></i>
             <h2>Join our Community</h2>
             <p>Get support, chat with friends, and see announcements.</p>
-            <a href="#" class="btn-discord" onclick="openDiscord()">Join Discord</a>
+            <a href="https://discord.gg/hSEnV5xz" class="btn-discord" onclick="openDiscord()">Join Discord</a>
         </div>
     </section>
 
@@ -154,8 +161,9 @@
                 <p>You are purchasing: <span id="selected-rank" style="color: var(--primary);">Rank</span></p>
                 
                 <div class="qr-container">
-                    <img src="qr.png" alt="GCash QR Code" class="qr-image">
+                    <img src="qrrrr.png" alt="GCash QR Code" class="qr-image">
                     <p class="scan-text">Scan to Pay: <strong id="price-tag">₱0.00</strong></p>
+                    <p class="gcash-number">GCash No: <strong>0912 345 6789</strong></p>
                 </div>
 
                 <form id="billing-form" class="billing-form" action="https://formsubmit.co/johnreydaoang1@gmail.com" method="POST" enctype="multipart/form-data" onsubmit="submitForm(event)">
