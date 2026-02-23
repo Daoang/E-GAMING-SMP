@@ -1,6 +1,6 @@
 // Function to Open Discord Link
 function openDiscord() {
-    const discordLink = "https://discord.gg/Zme7zmVh"; 
+    const discordLink = "https://discord.gg/JB6dkq5b"; 
     window.open(discordLink, '_blank');
 }
 
@@ -16,7 +16,6 @@ function changeSlide() {
     }
 }
 setInterval(changeSlide, 3000);
-
 
 /* --- PAYMENT MODAL LOGIC --- */
 const modal = document.getElementById('paymentModal');
