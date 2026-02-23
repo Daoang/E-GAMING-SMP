@@ -1,4 +1,3 @@
-/* --- Variables & Reset --- */
 :root {
     --bg-color: #0f0f13;
     --card-bg: rgba(255, 255, 255, 0.05);
@@ -24,7 +23,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Utilities --- */
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -34,7 +33,7 @@ body {
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
-/* --- Navbar --- */
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -200,6 +199,9 @@ h2::after {
     transition: 0.4s;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
@@ -210,6 +212,10 @@ h2::after {
 
 .rank-header h3 { font-size: 1.8rem; margin-bottom: 10px; }
 .price { font-size: 1.5rem; color: var(--primary); font-weight: 700; margin-bottom: 20px; }
+
+.perks-list {
+    margin-bottom: 20px;
+}
 
 .perks-list li {
     margin-bottom: 12px;
@@ -224,7 +230,7 @@ h2::after {
 .btn-buy {
     width: 100%;
     padding: 12px;
-    margin-top: 20px;
+    margin-top: auto;
     border: none;
     border-radius: 8px;
     background: rgba(255,255,255,0.1);
@@ -240,7 +246,8 @@ h2::after {
 /* --- Vote Links --- */
 .vote-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Changed minmax from 200px to 240px below to prevent text wrapping */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
 }
 
@@ -323,7 +330,7 @@ footer {
 /* --- FIXED MODAL CONTENT WITH NO SCROLLBAR --- */
 .modal-content {
     background: #1e1e24;
-    padding: 25px; /* Reduced padding */
+    padding: 25px;
     border-radius: 15px;
     border: 1px solid var(--primary);
     width: 90%;
@@ -333,8 +340,8 @@ footer {
     box-shadow: 0 0 50px rgba(108, 92, 231, 0.3);
     
     /* SCROLL ENABLED */
-    max-height: 90vh; /* Max height is 90% of screen */
-    overflow-y: auto; /* Enable scroll if content is too long */
+    max-height: 90vh;
+    overflow-y: auto; 
 
     /* HIDE SCROLLBAR (Firefox, IE, Edge) */
     scrollbar-width: none; 
@@ -368,7 +375,7 @@ footer {
 }
 
 .qr-image {
-    width: 120px;  /* SMALLER QR */
+    width: 120px; 
     height: 120px; 
     object-fit: contain;
     display: block;
@@ -380,6 +387,21 @@ footer {
     margin-top: 5px;
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+.gcash-number {
+    color: #333;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-top: 1px dashed #ccc;
+    padding-top: 8px;
+}
+
+.gcash-number strong {
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .billing-form {
@@ -400,7 +422,7 @@ footer {
 
 .form-group input {
     width: 100%;
-    padding: 10px; /* Smaller padding */
+    padding: 10px; 
     border-radius: 8px;
     border: 1px solid rgba(255,255,255,0.1);
     background: rgba(255,255,255,0.05);
